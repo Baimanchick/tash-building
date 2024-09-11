@@ -1,0 +1,96 @@
+
+:where(.css-dev-only-do-not-override-m4timi).ant-card .ant-card-meta-title{
+    font-weight: normal !important;
+    font-size: 24px !important;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-card .ant-card-meta-description{
+    font-size: 16px !important;
+    line-height: 16px;
+}
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+    color: unset;
+    font-size: unset;
+}
+
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-next:hover,
+.ant-carousel .slick-prev:focus,
+.ant-carousel .slick-next:focus {
+    color: unset;
+}
+
+
+.truncate-ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+}
+
+@media screen and (max-width: 500px) {
+    .truncate-ellipsis{
+        -webkit-line-clamp: 3;
+    }
+}
+
+:where(.css-dev-only-do-not-override-m4timi).ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector {
+    padding-inline: 30px !important;
+    padding-block: 1.5rem !important;
+    border-radius: 20px !important;
+    color: #24923C !important;
+    border-color: #24923C !important;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector:focus {
+    border-color: #24923C !important;
+}
+span.ant-input-suffix{
+}
+span.ant-select-selection-item{
+    padding-inline-end: 10px !important;
+}
+span.ant-select-arrow{
+    top: 60% !important;
+}
+
+.ant-tabs .ant-tabs-tab{
+    border-radius: 20px !important;
+    font-size: 16px !important;
+    background-color: #FFFFFF !important;
+    padding: 8px 20px !important;
+}
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active {
+    background-color: #24923C !important;
+}
+
+.ant-tabs .ant-tabs-tab:hover{
+    color: black !important;
+}
+.ant-tabs .ant-tabs-tab-btn:active{
+    color: black !important;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+        color: #FFFFFF !important;
+}
+.ant-table-wrapper .ant-table-thead >tr>th{
+   background-color: #24923C !important;
+    border-radius: 20px !important;
+    padding: 8px 20px !important;
+    text-align: center !important;
+}
+
+.ant-table-cell {
+    text-align: end !important;
+}
+.ant-table-cell:first-of-type{
+    text-align: start !important;
+}
+
+/*.slick-slide > div {*/
+/*    margin: 0 -200px;*/
+/*}*/
+/*.slick-list {*/
+/*    margin: 0 -40px;*/
+/*}*/
