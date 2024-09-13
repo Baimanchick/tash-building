@@ -19,7 +19,7 @@ const contentStyle: React.CSSProperties = {
 const Houses = () => {
   const carouselRef = useRef<any>(null);
   const [current, setCurrent] = useState<number>(0); 
-  const { house, pathname } = useHouse(); 
+  const { house, pathname } = useHouse();   
 
   const houses = house.house || []; 
 
@@ -102,7 +102,6 @@ const Houses = () => {
                   src={house.images[0]} 
                   alt={house.title}
                   width={1360}
-                  draggable={false}
                   height={600}
                   quality={100}
                 />

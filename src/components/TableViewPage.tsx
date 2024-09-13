@@ -7,53 +7,19 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 import Dot from '@/public/assets/svgs/dot.svg';
 
 const { Paragraph, Text } = Typography;
-const data = [
-  {
-    key: '1',
-    option: '1. Тип дома',
-    choice: 'Mikea 1',
-    cost: '13000$',
-  },
-  {
-    key: '2',
-    option: '2. Количество этажей',
-    choice: '2 этажа',
-    cost: '13000$',
-  },
-  {
-    key: '3',
-    option: '3. Тип кровли',
-    choice: 'Металлочерепица',
-    cost: '13000$',
-  },
-  {
-    key: '4',
-    option: '4. Внутренние отделочные материалы',
-    choice: 'Гипсокартон',
-    cost: '13000$',
-  },
-  {
-    key: '5',
-    option: '5. Внешние отделочные материалы',
-    choice: 'Металлический сайдинг',
-    cost: '13000$',
-  },
-  {
-    key: '6',
-    option: '6. Тип окон и дверей',
-    choice: 'Алюминиевые окна и двери',
-    cost: '13000$',
-  },
-  {
-    key: '7',
-    option: '7. Дополнительные параметры',
-    choice: 'Гараж',
-    cost: '13000$',
-  },
-];
 
-const CustomTableView = () => {
+interface TableData {
+  option: string,
+  choice: string,
+  cost: number
+}
+
+const CustomTableView = ({oneHouse} : any) => {
   const isTablet = useMediaQuery(768);
+
+  console.log(oneHouse);
+  
+  
   return isTablet ? (
     <Tabs
       className="!m-auto !my-6 !max-w-[1360px] !px-6"
@@ -64,7 +30,7 @@ const CustomTableView = () => {
         justifyContent: 'space-between',
         width: '100%',
       }}
-      items={data.map(({ option, choice, cost }, i) => {
+      items={oneHouse?.map(({ option, choice, cost } : TableData, i: number) => {
         const id = String(i + 1);
         return {
           label: option,
@@ -118,8 +84,8 @@ const CustomTableView = () => {
 
       <Divider style={{ margin: 0 }} />
 
-      {data.map((item) => (
-        <div key={item.key}>
+      {oneHouse?.map((item : TableData, id: number) => (
+        <div key={id}>
           <Row style={{ padding: '20px 0', textAlign: 'left' }}>
             <Col span={6}>
               <Text strong>{item.option}</Text>

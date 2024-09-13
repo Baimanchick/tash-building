@@ -13,9 +13,7 @@ export const useHouse = () => {
   useEffect(() => {    
       const loadHouses = async () => {
         try {
-          const fetchedHouses = await fetchHouse(selectedCategory.id)
-          console.log(fetchedHouses);
-          
+          const fetchedHouses = await fetchHouse(selectedCategory.id)          
           setHouse(fetchedHouses)
         } catch (error) {
           console.error("Error fetching houses:", error)
