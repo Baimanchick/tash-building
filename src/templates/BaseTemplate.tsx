@@ -64,20 +64,24 @@ const BaseTemplate = (props: { children: React.ReactNode }) => {
               <TashBuilding className={headerClass} />{' '}
             </Link>
           </div>
-          <div className="flex items-center gap-10 justify-center">
-          <ButtonAnimate>
-            <CustomButton dot className="!px-[30px] !py-6 " type="primary">
-              Заказать дом
-            </CustomButton>
-          </ButtonAnimate>
-            <div className="flex items-center justify-center">
-              <div
-                aria-hidden="true"
-                className="relative flex size-12 cursor-pointer items-center justify-center rounded-[20px] bg-white"
-                onClick={() => showDrawer()}
-              >
-                <span className="absolute block h-0.5 w-5 -translate-y-1 bg-gray-800 transition-transform  duration-200" />
-                <span className="absolute block h-0.5 w-5 translate-y-1 bg-gray-800 transition-transform  duration-200" />
+          <div className="flex items-center gap-10">
+            <div className="base_template_button_desk">
+            <ButtonAnimate>
+              <CustomButton dot className="!px-[30px] !py-6 " type="primary">
+                Заказать дом
+              </CustomButton>
+            </ButtonAnimate>
+            </div>
+            <div className="flex items-center gap-10 justify-center">
+              <div className="flex items-center justify-center">
+                <div
+                  aria-hidden="true"
+                  className="relative flex size-12 cursor-pointer items-center justify-center rounded-[20px] bg-white"
+                  onClick={() => showDrawer()}
+                >
+                  <span className="absolute block h-0.5 w-5 -translate-y-1 bg-gray-800 transition-transform  duration-200" />
+                  <span className="absolute block h-0.5 w-5 translate-y-1 bg-gray-800 transition-transform  duration-200" />
+                </div>
               </div>
             </div>
           </div>

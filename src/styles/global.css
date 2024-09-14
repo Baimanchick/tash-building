@@ -50,6 +50,24 @@ body{
   object-fit: cover !important;
 }
 
+.base_template_button_mobile{
+  display: none;
+}
+
+
+@media (max-width: 768px){
+  .base_template_button_mobile{
+    display: initial;
+  }
+  .base_template_button_desk{
+    display: none;
+  }
+  .base_template_button_mobile_button{
+    width: 100px !important;
+    font-size: 12px !important;
+  }
+}
+
 /*.square-container {*/
 /*  width: 100%;*/
 /*  height: auto;*/
