@@ -30,6 +30,8 @@ export interface ModalAppProps {
 function ModalApp({ isModalVisible, handleCancel }: ModalAppProps) {
     const [form] = Form.useForm();
     const [submitted, setSubmitted] = useState(false);
+    console.log(submitted);
+    
 
     const onFinish = (values: any) => {
         const postData = {
@@ -40,13 +42,15 @@ function ModalApp({ isModalVisible, handleCancel }: ModalAppProps) {
             message: values.message,
         };
 
-        axios.post('https://michelle-kg.online/form/', postData)
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/form/`, postData)
             .then((response: any) => {
                 form.resetFields();
+                console.log(response);
                 setSubmitted(true);
                 message.success('Mail sent successfully. Thank you for your email.');
             })
             .catch((error: any) => {
+                console.log(error);
                 message.error('Something went wrong. Please try again');
             });
         handleCancel();

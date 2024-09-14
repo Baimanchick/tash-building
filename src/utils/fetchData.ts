@@ -1,7 +1,6 @@
-
 export const fetchCategories = async () => {
   try {
-    const response = await fetch('https://michelle-kg.online/categories/');
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories/`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -13,33 +12,30 @@ export const fetchCategories = async () => {
   }
 };
 
-
 export const fetchHouse = async (id: number) => {
   try {
-    const response = await fetch(`https://michelle-kg.online/categories/${id}/`)
-    // console.log(response);
-    
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories/${id}/`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    const data = response.json()
-    return data
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error('Ошибка при загрузке домов:', error);
-    return []
+    return [];
   }
-}
+};
 
 export const fetchOneHouse = async (id: number) => {
   try {
-    const response = await fetch(`https://michelle-kg.online/house/${id}/`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/house/${id}/`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    const data = response.json()
-    return data
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error('Ошибка при загрузке домов:', error);
-    return []
+    return [];
   }
-}
+};
