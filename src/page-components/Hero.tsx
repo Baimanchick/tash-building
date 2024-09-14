@@ -26,11 +26,14 @@ const Hero = ({ text }: { text?: string }) => {
             {text}
           </h3>
 
-          <ButtonAnimate>
-            <CustomButton dot className="!px-[30px] !py-6" type="primary">
-              Заказать дом
-            </CustomButton>
-          </ButtonAnimate>
+          <div className="md:hidden">
+            <ButtonAnimate>
+              <CustomButton dot className="!px-[30px] !py-6" type="primary">
+                Заказать дом
+              </CustomButton>
+            </ButtonAnimate>
+          </div>
+
         </div>
       </Transition>
     </section>

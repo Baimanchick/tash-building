@@ -65,7 +65,7 @@ const Houses = () => {
           </div>
         </Transition>
 
-        <div className="absolute left-[45%] top-[90%] z-10 hidden items-center gap-4 md:flex">
+        <div className="absolute left-[50%] top-[90%] z-10 flex items-center gap-4 transform -translate-x-1/2 -translate-y-1/2">
           <button
             onClick={handlePrev}
             className="flex size-[60px] items-center justify-center rounded-[24px] bg-[#FFFFFFD6]"
@@ -88,9 +88,9 @@ const Houses = () => {
           ref={carouselRef}
           focusOnSelect={false}
           pauseOnFocus={false}
-          dots={false}
+          dots={true}
           touchMove
-          draggable
+          draggable={false}
           className="rounded-[20px] "
           afterChange={onChange}
         >

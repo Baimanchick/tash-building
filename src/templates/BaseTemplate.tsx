@@ -10,14 +10,14 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 import TashBuilding from '@/public/assets/svgs/tash-building-logo.svg';
 import ButtonAnimate from '@/components/ButtonAnimate';
 import { CustomButton } from '@/components/Button';
+import ModalApp from '@/components/ModalApp';
 
 const BaseTemplate = (props: { children: React.ReactNode }) => {
   const pathname = usePathname();
   const isTablet = useMediaQuery(768);
-
   const [headerClass, setHeaderClass] = useState('');
   const [isActive, setIsActive] = useState(false);
-
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -25,8 +25,16 @@ const BaseTemplate = (props: { children: React.ReactNode }) => {
     setIsActive(!isActive);
   };
 
+  const showModal = () => {
+      setIsModalVisible(true);
+  };
+
   const onClose = () => {
     setOpen(false);
+  };
+
+  const handleCancel = () => {
+      setIsModalVisible(false);
   };
 
   useEffect(() => {
@@ -67,7 +75,7 @@ const BaseTemplate = (props: { children: React.ReactNode }) => {
           <div className="flex items-center gap-10">
             <div className="base_template_button_desk">
             <ButtonAnimate>
-              <CustomButton dot className="!px-[30px] !py-6 " type="primary">
+              <CustomButton onClick={showModal} dot className="!px-[30px] !py-6 " type="primary">
                 Заказать дом
               </CustomButton>
             </ButtonAnimate>
@@ -86,7 +94,7 @@ const BaseTemplate = (props: { children: React.ReactNode }) => {
             </div>
           </div>
         </header>
-        <div className="fixed left-1/2 z-[11] flex h-[70px] w-screen -translate-x-1/2 bg-[#F5F5F5]" />
+        <div className="fixed left-1/2 z-[11] flex h-[70px] w-full -translate-x-1/2 bg-[#F5F5F5]" />
 
         <main>{props.children}</main>
 
@@ -226,6 +234,7 @@ const BaseTemplate = (props: { children: React.ReactNode }) => {
           <Socials />
         </div>
       </Drawer>
+      <ModalApp handleCancel={handleCancel} isModalVisible={isModalVisible} />
     </>
   );
 };

@@ -12,13 +12,11 @@ export default function Transition({
 }) {
   const controls = useAnimation();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true }); 
 
   useEffect(() => {
     if (isInView) {
       controls.start('visible');
-    } else {
-      controls.start('hidden');
     }
   }, [controls, isInView]);
 
