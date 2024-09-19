@@ -56,14 +56,16 @@ const Houses = () => {
           <span className="font-corporate text-primary">tash.building</span>
         </h3>
         <Divider style={{ borderColor: '#101010' }} />
-        <Transition key={current}>
-          <div className="mb-[40px] flex flex-col items-start justify-between px-3 md:flex-row md:items-start md:p-0">
-            <h3 className="text-[44px]">{currentHouse?.title ?? 'Default'}</h3>
-            <p className="max-w-[680px] text-[24px] leading-[26px]">
-              {currentHouse?.description ?? 'Default Description'}
-            </p>
-          </div>
-        </Transition>
+        <div className='house_title_and_des'>
+          <Transition key={current}>
+            <div className="mb-[40px] flex flex-col items-start justify-between px-3 md:flex-row md:items-start md:p-0">
+              <h3 className="text-[44px]">{currentHouse?.title ?? 'Default'}</h3>
+              <p className="max-w-[680px] text-[24px] leading-[26px]">
+                {currentHouse?.description ?? 'Default Description'}
+              </p>
+            </div>
+          </Transition>
+        </div>
 
         <div className="absolute left-[50%] top-[90%] z-10 flex items-center gap-4 transform -translate-x-1/2 -translate-y-1/2">
           <button

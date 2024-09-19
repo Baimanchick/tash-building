@@ -54,10 +54,30 @@ body{
   display: none;
 }
 
+.mobile-image {
+  display: none;
+}
+
+.ant-select-selector {
+  padding-inline: 30px !important;
+  padding-block: 1.5rem !important;
+  border-radius: 20px !important;
+  color: #24923C !important;
+  border-color: #24923C !important;
+}
 
 @media (max-width: 768px){
   .base_template_button_mobile{
     display: initial;
+  }
+  .house_title_and_des {
+    height: 535px;
+  }
+  .mobile-image {
+    display: block;
+  }
+  .desk-image {
+    display: none;
   }
   .base_template_button_desk{
     display: none;

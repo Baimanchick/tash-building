@@ -12,21 +12,22 @@ import individual from '@/public/assets/images/individual1.webp';
 import LogoTash from '@/public/assets/svgs/tash-building-logo.svg';
 
 const { Paragraph } = Typography;
+
 const LstkIndividual = () => {
   return (
     <Transition>
       <div className="relative left-0 top-0 m-auto mb-[60px] h-screen max-h-[1200px] w-screen px-3  md:mb-[100px]">
         <div className="m-auto max-w-[1360px]">
-          <Row gutter={[100, 0]} justify="end" align="top">
+          <Row  justify="end" align="top">
             <Col xs={24} md={15}>
               <h3 className="mb-[20px] text-[32px] leading-[38px] text-black md:text-[64px] md:leading-[60px]">
                 Строительство индивидуальных домов из ЛСТК
               </h3>
             </Col>
           </Row>
-          <Row gutter={[100, 0]} justify="end" align="top">
+          <Row  justify="end" align="top">
             <Col xs={24} md={9}>
-              <Paragraph className="!max-w-full !text-[14px] !leading-[18px] !text-primary-gray md:!max-w-[450px] md:!text-[16px] md:!leading-[16px]">
+              <Paragraph className="!max-w-full !text-[16px] !leading-[18px] !text-primary-gray md:!max-w-[450px] md:!text-[16px] md:!leading-[16px]">
                 Мы предлагаем полный комплекс услуг по проектированию и
                 строительству индивидуальных домов из ЛСТК, обеспечивая высокий
                 уровень качества на каждом этапе – от идеи до заселения.
@@ -52,7 +53,7 @@ const LstkIndividual = () => {
             </Col>
           </Row>
           <Row
-            gutter={[100, 0]}
+            
             justify="end"
             align="top"
             className="mt-[10px]"
