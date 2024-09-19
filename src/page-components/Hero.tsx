@@ -1,14 +1,25 @@
 'use client';
 
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { CustomButton } from '@/components/Button';
 import ButtonAnimate from '@/components/ButtonAnimate';
 import Transition from '@/components/Transition';
 import hero from '@/public/assets/images/hero.png';
+import ModalApp from '@/components/ModalApp';
 
 const Hero = ({ text }: { text?: string }) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+      setIsModalVisible(false);
+  };
+
   return (
     <section className="section relative top-0 z-[11] mb-[100px] h-screen bg-cover bg-center">
       <Transition>
@@ -28,7 +39,7 @@ const Hero = ({ text }: { text?: string }) => {
 
           <div className="md:hidden">
             <ButtonAnimate>
-              <CustomButton dot className="!px-[30px] !py-6" type="primary">
+              <CustomButton onClick={showModal} dot className="!px-[30px] !py-6" type="primary">
                 Заказать дом
               </CustomButton>
             </ButtonAnimate>
@@ -36,6 +47,7 @@ const Hero = ({ text }: { text?: string }) => {
 
         </div>
       </Transition>
+      <ModalApp handleCancel={handleCancel} isModalVisible={isModalVisible} />
     </section>
   );
 };

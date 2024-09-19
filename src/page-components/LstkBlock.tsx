@@ -9,13 +9,24 @@ import { CustomButton } from '@/components/Button';
 import ButtonAnimate from '@/components/ButtonAnimate';
 import Transition from '@/components/Transition';
 import lstk from '@/public/assets/images/lstk.webp';
+import lstkMobile from '@/public/assets/images/lstk_mobile.webp';
 
 const Lstk = () => {
   return (
     <Transition>
-      <div className="relative left-0 top-0 m-auto mb-[60px] h-screen max-h-[900px] w-screen px-8 pt-[100px] md:mb-[100px]">
+      <div className="relative left-0 top-0 m-auto mb-[60px] max-h-[990px] h-[900px] w-screen px-8 pt-[30px] md:mb-[100px]">
         <Image
           src={lstk}
+          className='desk-image'
+          alt="contact"
+          quality="100"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+        />
+        <Image
+          src={lstkMobile}
+          className='mobile-image'
           alt="contact"
           quality="100"
           layout="fill"
