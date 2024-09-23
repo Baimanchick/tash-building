@@ -46,6 +46,19 @@ export default function RootLayout(props: {
       <meta name="description" content="Tash Building – строительная компания, которая поможет вам построить дом мечты или купить готовый дом." />
       <meta name="keywords" content="построить дом, купить дом, строительная компания, строительство коттеджей, строительство домов, строительство под ключ, современные дома, частные дома" />
       <meta name="robots" content="index, follow" />
+      
+      {/* Google Tag Manager */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBS4DRTPML"></script>
+      <script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XBS4DRTPML');
+        `}
+      </script>
+      {/* End Google Tag Manager */}
+
       <body className="bg-[#F5F5F5] font-helvetica">
         <AntdRegistry>{props.children}</AntdRegistry>
       </body>
