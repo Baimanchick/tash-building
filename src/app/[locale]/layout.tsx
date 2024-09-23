@@ -42,6 +42,7 @@ export default function RootLayout(props: {
 
   return (
     <html lang={props.params.locale}>
+      <title>Строительная компания Tash Building | Построить дом, Купить дом</title>
       <meta name="description" content="Tash Building – строительная компания, которая поможет вам построить дом мечты или купить готовый дом." />
       <meta name="keywords" content="построить дом, купить дом, строительная компания, строительство коттеджей, строительство домов, строительство под ключ, современные дома, частные дома" />
       <meta name="robots" content="index, follow" />
