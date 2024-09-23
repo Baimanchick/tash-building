@@ -7,6 +7,9 @@ import { notFound } from 'next/navigation';
 import { AppConfig } from '@/utils/AppConfig';
 
 export const metadata: Metadata = {
+  title: 'Строительная компания Tash Building | Построить дом, Купить дом',
+  description: 'Tash Building – строительная компания, которая поможет вам построить дом мечты или купить готовый дом. Полный спектр услуг: проектирование, строительство под ключ и продажа домов.',
+  keywords: 'построить дом, купить дом, строительная компания, строительство коттеджей, строительство домов, строительство под ключ, современные дома, частные дома',
   icons: [
     {
       rel: 'apple-touch-icon',
@@ -39,6 +42,9 @@ export default function RootLayout(props: {
 
   return (
     <html lang={props.params.locale}>
+      <meta name="description" content="Tash Building – строительная компания, которая поможет вам построить дом мечты или купить готовый дом." />
+      <meta name="keywords" content="построить дом, купить дом, строительная компания, строительство коттеджей, строительство домов, строительство под ключ, современные дома, частные дома" />
+      <meta name="robots" content="index, follow" />
       <body className="bg-[#F5F5F5] font-helvetica">
         <AntdRegistry>{props.children}</AntdRegistry>
       </body>
