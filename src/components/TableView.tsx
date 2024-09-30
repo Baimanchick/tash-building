@@ -182,7 +182,7 @@ const CustomTable = () => {
                 </Paragraph>
               </div>
               <div>
-                <div className="my-3 flex w-[50%] items-center justify-center gap-2 rounded-[20px] bg-primary px-[15px] py-[8px] text-[14px] text-white">
+                <div className="my-3 flex items-center justify-center gap-2 rounded-[20px] bg-primary px-[15px] py-[8px] text-[14px] text-white">
                   Традиционные материалы <Dot />
                 </div>
                 <Paragraph className="max-w-[300px] text-[16px]">

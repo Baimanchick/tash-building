@@ -49,6 +49,7 @@ const TechTabs = () => {
       className="!m-auto !max-w-[1360px] !px-6"
       onChange={onChange}
       type="card"
+      hideAdd={true}
       tabBarStyle={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -76,12 +77,14 @@ const TechTabs = () => {
                       {imageDesc}
                     </p>
                   </div>
-                  <Image
-                    src={image2}
-                    width={453}
-                    height={453}
-                    alt={imageDesc}
-                  />
+                  <div className="w-img-custom">
+                    <Image
+                      src={image2}
+                      width={453}
+                      height={453}
+                      alt={imageDesc}
+                    />
+                  </div>
                 </div>
               )}
             </div>

@@ -46,7 +46,7 @@ export interface CarouselItem {
 export default async function Index() {
   return (
     <>
-      <Hero text="Где эстетика встречает инженерное мастерство" />
+      <Hero />
       <LstkIndividual />
       <Lstk />
       <Uniqueness />

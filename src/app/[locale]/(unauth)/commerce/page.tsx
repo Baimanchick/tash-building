@@ -1,13 +1,13 @@
 import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
-import { CustomButton } from '@/components/Button';
 import ButtonAnimate from '@/components/ButtonAnimate';
 import { Tabs } from '@/components/Tabs';
 import Transition from '@/components/Transition';
 import { Houses } from '@/page-components/Houses';
 import { SocialsBlock } from '@/page-components/SocialsBlock';
 import { TextBlock } from '@/page-components/TextBlock';
+import ButtonModal from '@/components/ButtonModal';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -36,9 +36,7 @@ const Commerce = () => {
               Вы можете заказать строительство коммерческих зданий
             </p>
             <ButtonAnimate>
-              <CustomButton dot className="!px-[30px] !py-6" type="primary">
-                Заказать дом
-              </CustomButton>
+              <ButtonModal/>
             </ButtonAnimate>
           </div>
         </section>
