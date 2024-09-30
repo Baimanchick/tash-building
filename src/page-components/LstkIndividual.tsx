@@ -3,17 +3,40 @@
 import { Col, Row, Typography } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { CustomButton } from '@/components/Button';
 import ButtonAnimate from '@/components/ButtonAnimate';
 import Transition from '@/components/Transition';
-import individual from '@/public/assets/images/individual1.webp';
+// import individual from '@/public/assets/images/individual1.webp';
 import LogoTash from '@/public/assets/svgs/tash-building-logo.svg';
+import { fetchLSTKimage } from '@/utils/fetchData';
 
 const { Paragraph } = Typography;
 
 const LstkIndividual = () => {
+  const [ image, setImage ] = useState<any>(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      try {
+        await fetchLSTKimage().then((data: any) => {
+          setImage(data);
+        })
+      } catch (error) {
+        console.log('load image lstk error', error);
+      }
+    }
+
+    loadImage();
+  }, [])
+
+  if(!image) {
+    return (
+      <div>Loading...</div>
+    )
+  } 
+
   return (
     <Transition>
       <div className="relative left-0 top-0 m-auto mb-[60px] h-screen max-h-[1200px] w-screen px-3  md:mb-[100px]">
@@ -70,13 +93,15 @@ const LstkIndividual = () => {
               md={{ span: 15, order: 2 }}
               order={2}
             >
-              <Image
-                src={individual}
-                width={720}
-                height={520}
-                alt="house"
-                className="h-[300px] w-full rounded-[10px] object-cover object-center md:h-[520px] md:w-[720px]"
-              />
+              { image.map((item: any) => (
+                <Image
+                  src={item.image}
+                  width={720}
+                  height={520}
+                  alt="house"
+                  className="h-[300px] w-full rounded-[10px] object-cover object-center md:h-[520px] md:w-[720px]"
+                />
+              )) }
             </Col>
           </Row>
         </div>

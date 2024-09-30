@@ -37,6 +37,14 @@ body{
   font-family: Inter sans-serif;
 }
 
+:where(.css-dev-only-do-not-override-m4timi).ant-tabs >.ant-tabs-nav .ant-tabs-nav-wrap, :where(.css-dev-only-do-not-override-m4timi).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-wrap {
+  width: 10000px;
+}
+
+.w-img-custom {
+  max-width: 453px;
+  width: 500%;
+}
 
 .styled-logo path:first-child{
   fill: #24923C;

@@ -1,12 +1,29 @@
-import React from 'react';
+'use client'
+
+import React, { useEffect, useState } from 'react';
 
 import { SocialCard } from '@/components/SocialCard';
 import Socials from '@/components/Socials';
 import Transition from '@/components/Transition';
-import link2 from '@/public/assets/images/contact.png';
-import link from '@/public/assets/images/link.png';
+import { fetchSocialMediaContent } from '@/utils/fetchData';
 
 const SocialsBlock = () => {
+  const [ items, setItems ] = useState([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        await fetchSocialMediaContent().then((data: any) => {
+          setItems(data);
+        })
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    loadData();
+  }, [])
+
   return (
     <Transition duration={1.4}>
       <div className="m-auto mb-[100px] max-w-[1360px]">
@@ -16,16 +33,13 @@ const SocialsBlock = () => {
         </h3>
         <Socials />
         <div className="flex flex-col items-center gap-1 px-3 md:flex-row">
-          <SocialCard
-            link="https://youtu.be/bT-r-sDDhLQ?si=xXk8CyOtfxeucADy"
-            image={link}
-            text="Почему ЛСТК в 2024 году это технология будущего"
-          />
-          <SocialCard
-            link="https://youtu.be/zYTE87rKn5Q?si=JMs62NZvHGUsE6fM"
-            image={link2}
-            text="Современный дом в Кыргызстане За 4 месяца от проекта до реальности с ЛСТК и пенобетоном"
-          />
+          { items.map((item: any) => (
+            <SocialCard
+              link={item.link}
+              image={item.image}
+              text={item.text}
+            />
+          )) }
         </div>
       </div>
     </Transition>
