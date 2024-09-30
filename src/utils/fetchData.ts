@@ -10,7 +10,7 @@ export const fetchCategories = async () => {
     console.error('Ошибка при загрузке категорий:', error);
     return []; 
   }
-};
+}; 
 
 export const fetchHouse = async (id: number) => {
   try {
