@@ -46,5 +46,4 @@ const SocialsBlock = () => {
   );
 };
 
-// @ts-ignore
 export { SocialsBlock };

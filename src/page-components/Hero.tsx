@@ -34,6 +34,8 @@ const Hero = () => {
     loadMainImage();
   }, [])
 
+  
+
   if (!mainImageContent) {
     return <div>Loading...</div>; 
   }

@@ -12,17 +12,6 @@ import firstSolution from '@/public/assets/images/solution.webp';
 import secondSolution from '@/public/assets/images/solution1.webp';
 import thirdSolution from '@/public/assets/images/solution2.webp';
 import ArrowLink from '@/public/assets/svgs/arrow-link.svg';
-//
-// const contentStyle: React.CSSProperties = {
-//   margin: 0,
-//   height: '400px',
-//   display: 'flex',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   color: 'black',
-//   lineHeight: '160px',
-//   textAlign: 'center',
-// };
 const items = [
   { id: 1, title: 'Микея 1', size: '170 кв.м.', imgSrc: firstSolution },
   { id: 2, title: 'Микея 2', size: '190 кв.м.', imgSrc: secondSolution },
@@ -30,11 +19,7 @@ const items = [
 ];
 const SolutionsCarousel: React.FC = () => {
   const slider = useRef<CarouselRef | null>(null);
-  // @ts-ignore
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  // const handleSlideChange = (current: number) => {
-  //   setCurrentSlideIndex(current);
-  // };
   const handleSlideChange = (index: number) => {
     if (slider.current) {
       slider.current.goTo(index);

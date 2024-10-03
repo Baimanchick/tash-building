@@ -30,9 +30,7 @@ export interface ModalAppProps {
 function ModalApp({ isModalVisible, handleCancel }: ModalAppProps) {
     const [form] = Form.useForm();
     const [submitted, setSubmitted] = useState(false);
-    console.log(submitted);
-    
-
+    submitted
     const onFinish = (values: any) => {
         const postData = {
             name: values.name,

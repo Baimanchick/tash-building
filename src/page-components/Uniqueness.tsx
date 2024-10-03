@@ -26,14 +26,16 @@ const Uniqueness = () => {
     loadData();
   }, [])
 
-  console.log(data);
+  
 
   return (
     <div className="relative m-auto max-w-[1360px]">
       <Transition>
-        <h2 className="mb-[30px] text-center text-[44px] sm:text-6xl">
-          Уникальность
-        </h2>
+          {data.map((item: any, id: number) => (
+            <h2 key={id} className="mb-[30px] text-center text-[44px] sm:text-6xl">
+                {item.title}
+            </h2>
+          ))}
         <div className="mb-[30px] flex items-center justify-center md:mb-0">
           <Image
             className="size-[335px] rounded-full object-cover sm:size-[700px]"
