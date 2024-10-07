@@ -3,7 +3,10 @@ import React from 'react';
 import Instagram from '@/public/assets/svgs/instagram.svg';
 import YouTube from '@/public/assets/svgs/youtube.svg';
 
-const Socials = () => {
+const Socials = ({item} : any) => {
+  if (!item) {
+    return <div>Loading...</div>
+  }
   return (
     <div className="flex items-center justify-center">
       <div
@@ -17,7 +20,7 @@ const Socials = () => {
         <ul className="flex items-center gap-2">
           <li>
             <a
-              href="instagram.com/tash_building_lstk/"
+              href={item.link_inst}
               aria-label="Instagram"
               target="_blank"
               rel="noopener"
@@ -27,7 +30,7 @@ const Socials = () => {
           </li>
           <li>
             <a
-              href="https://www.youtube.com/@azamattashbaevbuilder"
+              href={item.link_youtube}
               aria-label="YouTube"
               target="_blank"
               rel="noopener"
