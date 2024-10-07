@@ -31,17 +31,6 @@ export interface CarouselItem {
   image: string;
   carousel: number;
 }
-// export interface ICarousel {
-//   id: number;
-//   items: Array<CarouselItem>;
-//   title: string;
-//   category: number;
-// }
-//
-// interface GetData {
-//   id: number;
-//   main_carousels: ICarousel;
-// }
 
 export default async function Index() {
   return (

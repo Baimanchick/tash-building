@@ -43,8 +43,8 @@ const Hero = () => {
   return (
     <section className="section relative top-0 z-[11] mb-[100px] h-screen bg-cover bg-center">
       <Transition>
-        { mainImageContent.map((item: any) => (
-          <>
+        { mainImageContent.map((item: any, id: number) => (
+          <React.Fragment key={id}>
             <Image
               className="rounded-b-[40px]"
               src={item.image}
@@ -68,7 +68,7 @@ const Hero = () => {
               </div>
 
             </div>
-          </>  
+          </React.Fragment>  
         )) }
       </Transition>
       <ModalApp handleCancel={handleCancel} isModalVisible={isModalVisible} />

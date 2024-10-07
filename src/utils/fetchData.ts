@@ -69,6 +69,20 @@ export const fetchLSTKimage = async () => {
   }
 }
 
+export const fetchLSTKCommerce = async () => {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/com-lstk/`);
+    if(!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log('load main image error', error);
+    return [];
+  }
+}
+
 export const fetchUniqueItems = async () => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/unique/`);
@@ -86,6 +100,20 @@ export const fetchUniqueItems = async () => {
 export const fetchFeatureCarousel = async () => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/unique/`);
+    if(!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log('load carousel error', error);
+    return [];
+  }
+}
+
+export const fetchTechnology = async () => {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/technologically/`);
     if(!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
