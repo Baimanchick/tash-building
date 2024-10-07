@@ -124,3 +124,45 @@ export const fetchSocialMediaContent = async () => {
     return [];
   }
 }
+
+export const fetchBigDesription = async () => {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/big-description/`);
+    if(!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log('load main image error', error);
+    return [];
+  }
+}
+
+export const fetchHeroCarousel = async () => {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/carousels/`);
+    if(!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log('load main image error', error);
+    return [];
+  }
+}
+
+export const fetchNavbars = async () => {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/navbars/`);
+    if(!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log('load main image error', error);
+    return [];
+  }
+}

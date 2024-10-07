@@ -24,6 +24,8 @@ const SocialsBlock = () => {
     loadData();
   }, [])
 
+  console.log('items', items);
+
   return (
     <Transition duration={1.4}>
       <div className="m-auto mb-[100px] max-w-[1360px]">

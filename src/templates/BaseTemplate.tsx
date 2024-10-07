@@ -11,6 +11,7 @@ import TashBuilding from '@/public/assets/svgs/tash-building-logo.svg';
 import ButtonAnimate from '@/components/ButtonAnimate';
 import { CustomButton } from '@/components/Button';
 import ModalApp from '@/components/ModalApp';
+import { fetchNavbars } from '@/utils/fetchData';
 
 const BaseTemplate = (props: { children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -62,6 +63,25 @@ const BaseTemplate = (props: { children: React.ReactNode }) => {
     if (pathname !== '/') setHeaderClass('styled-logo');
     if (open) setOpen(false);
   }, [pathname]);
+
+  const [ items, setItems ] = useState([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        await fetchNavbars().then((data: any) => {
+          setItems(data);
+        })
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    loadData();
+  }, [])
+
+  console.log('items main', items);
+
 
   return (
     <>
@@ -201,34 +221,22 @@ const BaseTemplate = (props: { children: React.ReactNode }) => {
         }
       >
         <div className="flex w-full flex-col justify-between">
-          <ul>
-            <li className="border-b-2 border-[#DFDFDF] py-[10px] text-[30px] hover:border-primary md:px-[40px] md:text-[44px]">
-              <Link
-                href="/typical-houses"
-                className="text-main  hover:text-primary"
-              >
-                Типовые дома
-              </Link>
-            </li>
-            <li className="border-b-2 border-[#DFDFDF] py-[10px] text-[30px] hover:border-primary md:px-[40px] md:text-[44px]">
-              <Link
-                href="/individual"
-                className=" text-main hover:text-primary"
-              >
-                Индивидуальные дома
-              </Link>
-            </li>
-            <li className="border-b-2 border-[#DFDFDF] py-[10px] text-[30px] hover:border-primary md:px-[40px] md:text-[44px]">
-              <Link href="commerce" className=" text-main hover:text-primary">
-                Коммерческие здания
-              </Link>
-            </li>
-            <li className="border-b-2 border-[#DFDFDF] py-[10px] text-[30px] hover:border-primary md:px-[40px] md:text-[44px]">
-              <Link href="technology" className=" text-main hover:text-primary">
-                Технологии
-              </Link>
-            </li>
-          </ul>
+          { items.map((item: any, index: number) => (
+            <ul key={index}>
+              {item.items.map((data: any, indexed: number) => (
+                <React.Fragment key={indexed}>
+                  <li className="border-b-2 border-[#DFDFDF] py-[10px] text-[30px] hover:border-primary md:px-[40px] md:text-[44px]">
+                    <Link
+                      href={`/${data.link}`}
+                      className="text-main  hover:text-primary"
+                    >
+                      { data.text }
+                    </Link>
+                  </li>
+                </React.Fragment>
+              ))}
+            </ul>
+          )) }
         </div>
         <div className="flex justify-start">
           <Socials />
