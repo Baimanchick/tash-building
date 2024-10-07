@@ -8,8 +8,8 @@ import { Hero } from '@/page-components/Hero';
 import { Lstk } from '@/page-components/LstkBlock';
 import { LstkIndividual } from '@/page-components/LstkIndividual';
 import { SocialsBlock } from '@/page-components/SocialsBlock';
-import { TextBlock } from '@/page-components/TextBlock';
 import { Uniqueness } from '@/page-components/Uniqueness';
+import { TextBlockHome } from '@/page-components/TextBlockHome';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -40,7 +40,7 @@ export default async function Index() {
       <Lstk />
       <Uniqueness />
       <FeaturesCarousel />
-      <TextBlock />
+      <TextBlockHome />
       <Contact />
       <SolutionsCarousel />
       <SocialsBlock />
