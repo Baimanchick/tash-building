@@ -1,6 +1,6 @@
 'use client';
 
-import { Col, Drawer, Row } from 'antd';
+import {   Drawer } from 'antd';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -12,6 +12,7 @@ import ButtonAnimate from '@/components/ButtonAnimate';
 import { CustomButton } from '@/components/Button';
 import ModalApp from '@/components/ModalApp';
 import { fetchNavbars } from '@/utils/fetchData';
+import Footer from '@/components/Footer/Footer';
 
 const BaseTemplate = (props: { children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -118,84 +119,7 @@ const BaseTemplate = (props: { children: React.ReactNode }) => {
 
         <main>{props.children}</main>
 
-        <footer className="m-auto max-w-[1360px] text-center text-sm md:pt-8">
-          <Row
-            align="middle"
-            justify="center"
-            gutter={[0, 20]}
-            className="mb-[20px] md:mb-0"
-          >
-            <Col md={5} xs={24}>
-              <a
-                href="https://wa.me/message/6SKVNNWYVYDOB1"
-                className="text-primary-gray underline decoration-primary underline-offset-4 hover:text-primary"
-                target="_blank"
-                rel="noopener"
-              >
-                Написать в WhatsApp
-              </a>
-            </Col>
-            <Col md={10} xs={24}>
-              <div className="flex flex-col items-center font-helvetica">
-                <h4 className="text-[32px] leading-[40px] md:text-[64px] md:leading-[60px]">
-                  +996 777-222-220
-                </h4>
-                <h4 className="font-corporate text-[36px] leading-[30px] text-primary md:text-[64px] md:leading-[60px]">
-                  info@tash.building
-                </h4>
-              </div>
-            </Col>
-            <Col md={5} xs={24}>
-              <a
-                href="https://web.telegram.org/"
-                className="text-primary-gray underline decoration-primary underline-offset-4 hover:text-primary"
-                target="_blank"
-                rel="noopener"
-              >
-                Написать в Телеграмм
-              </a>
-            </Col>
-          </Row>
-          <Row gutter={[0, 20]} className="my-[50px]">
-            <Col md={8} xs={24}>
-              <div className="md:text-left">
-                ©{new Date().getFullYear()} Все права защищены.
-              </div>
-            </Col>
-            <Col md={8} xs={24}>
-              <div className="text-black">
-                Адрес: <br />
-                <span className="text-primary-gray">
-                  г.Бишкек, Баялинова 17/4
-                </span>
-              </div>
-            </Col>
-            <Col md={8} xs={24}>
-              <div className="md:text-right">Сайт сделан компанией K.Kode</div>
-            </Col>
-          </Row>
-          <Row align="middle" justify="center" className="md:mb-[10px]">
-            <Col md={24}>
-              <span className="text-2xl text-primary-gray">
-                Строительная компания
-              </span>
-            </Col>
-          </Row>
-          <Row
-            align="middle"
-            justify="center"
-            className="relative h-[150px] overflow-hidden md:h-[160px]"
-          >
-            <Col
-              span={24}
-              className="absolute bottom-[-60px] md:bottom-[-10px]"
-            >
-              <h2 className=" text-[60px] font-bold text-primary md:text-[220px]">
-                tash.building
-              </h2>
-            </Col>
-          </Row>
-        </footer>
+        <Footer/>
       </div>
       <Drawer
         onClose={onClose}

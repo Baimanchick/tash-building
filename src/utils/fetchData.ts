@@ -194,3 +194,17 @@ export const fetchNavbars = async () => {
     return [];
   }
 }
+
+export const fetchFooters = async () => {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/footers/`);
+    if(!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log('load main image error', error);
+    return [];
+  }
+}
