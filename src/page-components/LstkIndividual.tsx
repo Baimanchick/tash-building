@@ -31,6 +31,7 @@ const LstkIndividual = () => {
     loadImage();
   }, [])
 
+
   if(!image) {
     return (
       <div>Loading...</div>
@@ -44,23 +45,19 @@ const LstkIndividual = () => {
           <Row  justify="end" align="top">
             <Col xs={24} md={15}>
               <h3 className="mb-[20px] text-[32px] leading-[38px] text-black md:text-[64px] md:leading-[60px]">
-                Строительство индивидуальных домов из ЛСТК
+                { image.title }
               </h3>
             </Col>
           </Row>
           <Row  justify="end" align="top">
             <Col xs={24} md={9}>
               <Paragraph className="!max-w-full !text-[16px] !leading-[18px] !text-primary-gray md:!max-w-[450px] md:!text-[16px] md:!leading-[16px]">
-                Мы предлагаем полный комплекс услуг по проектированию и
-                строительству индивидуальных домов из ЛСТК, обеспечивая высокий
-                уровень качества на каждом этапе – от идеи до заселения.
+                {image.description_1}
               </Paragraph>
             </Col>
             <Col xs={24} md={15}>
               <Paragraph className="!max-w-full !text-[14px] !leading-[18px] !text-primary-gray md:!max-w-[550px] md:!text-[16px] md:!leading-[16px]">
-                Закажите дом здание из ЛСТК и получите высокотехнологичное,
-                экономичное решение с гарантией точных сроков и качества
-                исполнения.
+                {image.description_2}
               </Paragraph>
               <ButtonAnimate>
                 <Link href="individual" className="text-primary">
@@ -69,7 +66,7 @@ const LstkIndividual = () => {
                     className="!px-[20px] !py-4 md:!px-[30px] md:!py-6"
                     type="primary"
                   >
-                    Подробнее
+                    { image.button_title }
                   </CustomButton>
                 </Link>
               </ButtonAnimate>
@@ -93,15 +90,15 @@ const LstkIndividual = () => {
               md={{ span: 15, order: 2 }}
               order={2}
             >
-              { image.map((item: any) => (
+              {/* { image.map((item: any) => ( */}
                 <Image
-                  src={item.image}
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/${image.image}`}
                   width={720}
                   height={520}
                   alt="house"
                   className="h-[300px] w-full rounded-[10px] object-cover object-center md:h-[520px] md:w-[720px]"
                 />
-              )) }
+              {/* )) } */}
             </Col>
           </Row>
         </div>

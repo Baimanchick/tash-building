@@ -51,7 +51,7 @@ export default async function Index() {
       <Lstk />
       <Uniqueness />
       <FeaturesCarousel />
-      <TextBlock text="Дома из ЛСТК могут быть спроектированы с использованием современных архитектурных решений и инновационных дизайнерских элементов,  повышают комфорт и эстетику вашего жилья." />
+      <TextBlock />
       <Contact />
       <SolutionsCarousel />
       <SocialsBlock />
