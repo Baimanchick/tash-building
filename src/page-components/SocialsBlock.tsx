@@ -27,11 +27,6 @@ const SocialsBlock = () => {
     return <div>Loading...</div>;
   }
 
-  console.log(items);
-  
-
-  console.log('items', items);
-
   return (
     <Transition duration={1.4}>
       {items.map((item: any, index: number) => (

@@ -2,7 +2,7 @@
 
 import { CustomButton } from "@/components/Button";
 import ButtonAnimate from "@/components/ButtonAnimate";
-import ModalApp from "@/components/ModalApp";
+import ModalApp from "@/components/ModalApp/ModalApp";
 import { useState } from "react";
 
 const ButtonModal = () => {
