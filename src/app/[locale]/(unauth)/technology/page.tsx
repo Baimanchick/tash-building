@@ -8,6 +8,7 @@ import TechnologyCarousel from '@/components/TechnologyCarousel';
 import TechTabs from '@/components/TechTabs';
 import Transition from '@/components/Transition';
 import { SocialsBlock } from '@/page-components/SocialsBlock';
+import ButtonModal from '@/components/ButtonModal';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -43,7 +44,7 @@ const Technology = () => {
             </p>
             <ButtonAnimate>
               <CustomButton dot className="!px-[30px] !py-6" type="primary">
-                Заказать дом
+                <ButtonModal/>
               </CustomButton>
             </ButtonAnimate>
           </div>

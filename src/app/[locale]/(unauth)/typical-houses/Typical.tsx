@@ -2,25 +2,15 @@
 
 import { CustomButton } from "@/components/Button";
 import ButtonAnimate from "@/components/ButtonAnimate";
-import ModalApp from "@/components/ModalApp";
+import ButtonModal from "@/components/ButtonModal";
 import { SolutionsCarousel } from "@/components/SolutionsCarousel/SolutionsCarousel";
 import Transition from "@/components/Transition";
 import { Houses } from "@/page-components/Houses";
 import { SocialsBlock } from "@/page-components/SocialsBlock";
 import { TextBlock } from "@/page-components/TextBlock";
 import { Tabs } from "antd";
-import { useState } from "react";
 
 const Typical = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
 
   return (
     <div>
@@ -38,8 +28,8 @@ const Typical = () => {
               свое время
             </p>
             <ButtonAnimate>
-              <CustomButton onClick={showModal} dot className="!px-[30px] !py-6" type="primary">
-                Заказать дом
+              <CustomButton  dot className="!px-[30px] !py-6" type="primary">
+                <ButtonModal/>
               </CustomButton>
             </ButtonAnimate>
           </div>
@@ -49,7 +39,6 @@ const Typical = () => {
       <TextBlock text="Архитекторы-профессионалы полностью продумали планировки домов и разработали детальные проекты. На такие дома полностью разработаны проекты инженерных сетей и расчитаны сметы. Стоимость типового дома вы можете узнать с точностью  до 1 сома." />
       <SolutionsCarousel />
       <SocialsBlock />
-      <ModalApp handleCancel={handleCancel} isModalVisible={isModalVisible} />
     </div>
   );
 };

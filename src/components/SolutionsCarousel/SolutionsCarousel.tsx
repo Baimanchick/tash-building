@@ -20,19 +20,16 @@ const SolutionsCarousel: React.FC = () => {
     const loadImage = async () => {
       try {
         const fetchedData = await fetchHeroCarousel();
-        console.log("Fetched Data:", fetchedData); // Debugging
         setData(fetchedData);
-        setLoading(false); // Set loading to false when data is fetched
+        setLoading(false); 
       } catch (error) {
         console.log('Error loading data:', error);
-        setLoading(false); // Ensure to stop loading on error
+        setLoading(false);
       }
     };
 
     loadImage();
   }, []);
-
-  console.log('data', data);
 
   const slider = useRef<CarouselRef | null>(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);

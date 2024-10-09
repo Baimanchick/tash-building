@@ -3,22 +3,14 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
-import { CustomButton } from '@/components/Button';
 import ButtonAnimate from '@/components/ButtonAnimate';
 import Transition from '@/components/Transition';
-import ModalApp from '@/components/ModalApp';
 import { fetchMainImage } from '@/utils/fetchData';
+import ButtonModal from '@/components/ButtonModal';
 
 const Hero = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
   const [ mainImageContent, setMainImageContent ] = useState< any | null >(null);
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
 
-  const handleCancel = () => {
-      setIsModalVisible(false);
-  };
 
   useEffect(() => {
     const loadMainImage = async () => {
@@ -61,9 +53,7 @@ const Hero = () => {
 
               <div className="md:hidden">
                 <ButtonAnimate>
-                  <CustomButton onClick={showModal} dot className="!px-[30px] !py-6" type="primary">
-                    Заказать дом
-                  </CustomButton>
+                  <ButtonModal/>
                 </ButtonAnimate>
               </div>
 
@@ -71,7 +61,6 @@ const Hero = () => {
           </React.Fragment>  
         )) }
       </Transition>
-      <ModalApp handleCancel={handleCancel} isModalVisible={isModalVisible} />
     </section>
   );
 };
