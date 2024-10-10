@@ -1,6 +1,6 @@
 'use client'
 
-import { CustomButton } from "@/components/Button";
+// import { CustomButton } from "@/components/Button";
 import ButtonAnimate from "@/components/ButtonAnimate";
 import ButtonModal from "@/components/ButtonModal";
 import { SolutionsCarousel } from "@/components/SolutionsCarousel/SolutionsCarousel";
@@ -28,9 +28,7 @@ const Typical = () => {
               свое время
             </p>
             <ButtonAnimate>
-              <CustomButton  dot className="!px-[30px] !py-6" type="primary">
                 <ButtonModal/>
-              </CustomButton>
             </ButtonAnimate>
           </div>
         </section>
