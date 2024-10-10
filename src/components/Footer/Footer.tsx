@@ -48,10 +48,10 @@ function Footer() {
             <Col md={10} xs={24}>
               <div className="flex flex-col items-center font-helvetica">
                 <h4 className="text-[32px] leading-[40px] md:text-[64px] md:leading-[60px]">
-                  {items.phone_number}
+                  <a className='text-gray-700 hover:text-gray-700' href={`tel:${items.phone_number}`}>{items.phone_number}</a>
                 </h4>
                 <h4 className="font-corporate text-[36px] leading-[30px] text-primary md:text-[64px] md:leading-[60px]">
-                  {items.email}
+                  <a className='no-underline text-primary hover:text-primary' href={`mailto:${items.email}`}>{items.email}</a>
                 </h4>
               </div>
             </Col>
@@ -76,7 +76,7 @@ function Footer() {
               <div className="text-black">
                 Адрес: <br />
                 <span className="text-primary-gray">
-                  {items.address}
+                  <a className="text-primary-gray hover:text-primary-gray" href="https://2gis.kg/bishkek/firm/70000001087638366?m=74.647787%2C42.81819%2F16">{items.address}</a>
                 </span>
               </div>
             </Col>
