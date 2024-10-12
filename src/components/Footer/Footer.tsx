@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Row } from "antd"
 import Transition from "../Transition"
 import { useEffect, useState } from "react"
-import { fetchFooters } from "@/utils/fetchData"
+import { fetchFooters } from "@/utils/fetchData";
 
 function Footer() {
   const [items, setItems] = useState<any>(null)
@@ -22,7 +22,7 @@ function Footer() {
   }, [])
 
   if (!items) {
-    return <div>Loading...</div>
+    return null
   }
 
   return (

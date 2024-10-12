@@ -10,6 +10,8 @@ import { LstkIndividual } from '@/page-components/LstkIndividual';
 import { SocialsBlock } from '@/page-components/SocialsBlock';
 import { Uniqueness } from '@/page-components/Uniqueness';
 import { TextBlockHome } from '@/page-components/TextBlockHome';
+import ButtonAnimate from '@/components/ButtonAnimate';
+import ButtonModal from '@/components/ButtonModal';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -44,6 +46,11 @@ export default async function Index() {
       <Contact />
       <SolutionsCarousel />
       <SocialsBlock />
+      <div className='contact_us_ship'>
+        <ButtonAnimate>
+          <ButtonModal/>
+        </ButtonAnimate>
+      </div>
     </>
   );
 }

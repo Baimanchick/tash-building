@@ -1,13 +1,13 @@
 'use client'
 
-import { SocialsBlock } from '@/page-components/SocialsBlock'
-import { Row, Col } from 'antd'
-import React, { useEffect, useState } from 'react'
-import { HousesCarousel } from './HousesCarousel'
-import StyledText from './StyledText'
-import CustomTableView from './TableViewPage'
-import { fetchOneHouse } from '@/utils/fetchData'
-import Transition from './Transition'
+import { SocialsBlock } from '@/page-components/SocialsBlock';
+import { Row, Col } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { HousesCarousel } from './HousesCarousel';
+import StyledText from './StyledText';
+import CustomTableView from './TableViewPage';
+import { fetchOneHouse } from '@/utils/fetchData';
+import Transition from './Transition';
 
 function PageDetailComponent({ slug }: { slug: string }) {
   const [oneHouse, setOneHouse] = useState<any>(null); 
@@ -26,7 +26,7 @@ function PageDetailComponent({ slug }: { slug: string }) {
   }, [slug]);  
 
   if (!oneHouse) {
-    return <div>Loading...</div>; 
+    return null; 
   }
 
   

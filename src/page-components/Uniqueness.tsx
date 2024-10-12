@@ -26,7 +26,7 @@ const Uniqueness = () => {
   }, [])
 
   if(!data) { 
-    return <div>Loading...</div>
+    return null
   }
 
   return (

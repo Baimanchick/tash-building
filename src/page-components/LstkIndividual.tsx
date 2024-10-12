@@ -34,7 +34,7 @@ const LstkIndividual = () => {
 
   if(!image) {
     return (
-      <div>Loading...</div>
+      null
     )
   } 
 

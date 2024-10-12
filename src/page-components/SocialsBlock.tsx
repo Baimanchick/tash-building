@@ -6,6 +6,9 @@ import { SocialCard } from '@/components/SocialCard';
 import Socials from '@/components/Socials';
 import Transition from '@/components/Transition';
 import { fetchSocialMediaContent } from '@/utils/fetchData';
+import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
+
 
 const SocialsBlock = () => {
   const [items, setItems] = useState<any[]>([]);
@@ -24,7 +27,7 @@ const SocialsBlock = () => {
   }, []);
 
   if (!items.length) {
-    return <div>Loading...</div>;
+      return <Spin  indicator={<LoadingOutlined spin />} size="large" />
   }
 
   return (
