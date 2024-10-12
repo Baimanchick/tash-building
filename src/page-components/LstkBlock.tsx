@@ -28,7 +28,7 @@ const Lstk = () => {
   }, [])
 
   if(!items){
-    return <div>Loading ...</div>
+    return null
   }
 
   return (

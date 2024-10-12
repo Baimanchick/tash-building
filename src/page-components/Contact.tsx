@@ -27,7 +27,7 @@ const Contact = () => {
   }, [])
 
   if(!items) {
-    return <div>Loading...</div>
+    return null
   }
 
   return (

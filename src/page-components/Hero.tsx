@@ -7,6 +7,8 @@ import ButtonAnimate from '@/components/ButtonAnimate';
 import Transition from '@/components/Transition';
 import { fetchMainImage } from '@/utils/fetchData';
 import ButtonModal from '@/components/ButtonModal';
+import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const Hero = () => {
   const [ mainImageContent, setMainImageContent ] = useState< any | null >(null);
@@ -29,7 +31,14 @@ const Hero = () => {
   
 
   if (!mainImageContent) {
-    return <div>Loading...</div>; 
+    return (
+      <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div>
+          <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
+          <h3>Загрузка</h3>
+        </div>
+      </div>
+    )
   }
 
   return (

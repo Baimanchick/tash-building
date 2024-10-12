@@ -114,3 +114,11 @@ body{
 /*  height: 100%; !* This ensures the item itself is square *!*/
 /*}*/
 
+
+
+.contact_us_ship {
+  position: fixed;
+  bottom: 2%;
+  right: 5%;
+  z-index: 10000; 
+}

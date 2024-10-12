@@ -43,7 +43,7 @@ const SolutionsCarousel: React.FC = () => {
 
   return (
     loading ? (
-      <div>Loading...</div>
+      null
     ) : (
       data.length > 0 && data[0].carousels ? (
         <Transition duration={1.2}>

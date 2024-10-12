@@ -3,9 +3,10 @@ import React from 'react';
 import Instagram from '@/public/assets/svgs/instagram.svg';
 import YouTube from '@/public/assets/svgs/youtube.svg';
 
+
 const Socials = ({item} : any) => {
   if (!item) {
-    return <div>Loading...</div>
+    return null
   }
   return (
     <div className="flex items-center justify-center">
