@@ -35,8 +35,8 @@ function ModalApp({ isModalVisible, handleCancel }: ModalAppProps) {
     const onFinish = (values: any) => {
         const postData = {
             name: values.name,
-            phone: values.phone,
-            email: '',
+            phone_number: values.phone,
+            email: values.email,
             subject: '',
             message: values.message,
         };
@@ -84,14 +84,14 @@ function ModalApp({ isModalVisible, handleCancel }: ModalAppProps) {
                         <Input className="input_app" placeholder='Phone' />
                     </Form.Item>
 
-                    {/* <Form.Item
+                    <Form.Item
                         name="email"
                         label="Email"
                         rules={[{ required: true, type: 'email' }]}
                         className="formItem_app"
                     >
                         <Input className="input_app" placeholder='Email' />
-                    </Form.Item> */}
+                    </Form.Item>
 
                     {/* <Form.Item className="formItem_app" label="Subject" name="subject" >
                         <Input className="input_app" placeholder='Subject' />
