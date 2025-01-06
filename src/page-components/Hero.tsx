@@ -31,7 +31,7 @@ const Hero = () => {
   if (!mainImageContent) {
     return <div>Loading...</div>; 
   }
-
+  
   return (
     <section className="section relative top-0 z-[11] mb-[100px] h-screen bg-cover bg-center">
       <Transition>
