@@ -23,7 +23,7 @@ const nextConfig = {
   trailingSlash: false,
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['206.81.18.120', 'https://tashbackend.serveo.net', 'michelle-kg.online'],
+    domains: ['206.81.18.120', 'https://tashbackend.serveo.net', 'tash.soulist.life'],
   },
   eslint: {
     ignoreDuringBuilds: true, // Отключение линтинга во время сборки
