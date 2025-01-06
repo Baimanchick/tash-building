@@ -30,7 +30,7 @@ const Contact = () => {
     return <div>Loading...</div>
   }
 
-  return (
+  return ( 
     <Transition>
       <div className="relative left-0 top-0 m-auto mb-[60px] h-screen max-h-[900px] w-screen max-w-[1360px] px-8 pt-[100px] md:mb-0">
         {items.map((item: any, id: number) => (
